@@ -3,220 +3,55 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vaccine Storage Management</title>
-
+<title>Vaccine Management</title>
 <style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-}
-
-body {
-  background: #f1f6fb;
-  color: #17324d;
-}
-
-header {
-  background: #075985;
-  color: white;
-  padding: 22px;
-}
-
-nav {
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="dashboard.html">Dashboard</a>
-    <a href="vaccines.html">Vaccines</a>
-    <a href="blood.html">Blood Supplies</a>
-    <a href="alerts.html">Alerts</a>
-    <a href="history.html">History</a>
-</nav>
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  margin-right: 15px;
-  font-size: 14px;
-}
-
-.container {
-  max-width: 1000px;
-  margin: auto;
-  padding: 20px;
-}
-
-h2 {
-  margin-bottom: 18px;
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 15px;
-}
-
-.card {
-  background: white;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 3px 10px #00000010;
-}
-
-.card h3 {
-  color: #64748b;
-  font-size: 14px;
-  margin-bottom: 12px;
-}
-
-.value {
-  color: #0369a1;
-  font-size: 25px;
-  font-weight: bold;
-}
-
-.panel {
-  background: white;
-  margin-top: 22px;
-  padding: 20px;
-  border-radius: 12px;
-  overflow-x: auto;
-}
-
-table {
-  width: 100%;
-  min-width: 470px;
-  border-collapse: collapse;
-  margin-top: 15px;
-  font-size: 13px;
-}
-
-th, td {
-  padding: 13px 8px;
-  text-align: left;
-  border-bottom: 1px solid #e2e8f0;
-}
-
-th {
-  color: #075985;
-}
-
-.status {
-  color: #15803d;
-  font-weight: bold;
-}
-
-footer {
-  background: #0c4a6e;
-  color: white;
-  text-align: center;
-  padding: 20px;
-  margin-top: 30px;
-}
+*{box-sizing:border-box}
+body{font-family:Arial,sans-serif;margin:0;background:#f2f7fa;color:#183247}
+header{background:#075985;color:white;text-align:center;padding:25px}
+nav{background:#023e5a;padding:14px;text-align:center}
+nav a{color:white;text-decoration:none;margin:7px;padding:8px;display:inline-block}
+nav a:hover{background:#087eaa;border-radius:5px}
+main{max-width:1000px;margin:25px auto;padding:15px}
+table{width:100%;border-collapse:collapse;background:white}
+th,td{padding:13px;border:1px solid #ddd;text-align:center}
+th{background:#075985;color:white}
+.note{background:#fff3cd;padding:15px;border-radius:8px;margin-top:20px}
 </style>
 </head>
-
 <body>
-
 <header>
-  <h2>Vaccine Storage Management</h2>
-  <p>Cold Chain Monitoring System</p>
+<h1>Vaccine Management</h1>
+<p>Vaccine Storage Information</p>
 </header>
 
 <nav>
-  <a href="index.html">Home</a>
-  <a href="dashboard.html">Dashboard</a>
-  <a href="vaccines.html">Vaccines</a>
-  <a href="blood.html">Blood Storage</a>
+<a href="index.html">Home</a>
+<a href="dashboard.html">Dashboard</a>
+<a href="vaccines.html">Vaccines</a>
+<a href="blood.html">Blood Supplies</a>
+<a href="alerts.html">Alerts</a>
+<a href="history.html">History</a>
 </nav>
 
-<div class="container">
+<main>
+<h2>Vaccine Inventory</h2>
+<table>
+<tr>
+<th>Vaccine ID</th>
+<th>Vaccine Name</th>
+<th>Quantity</th>
+<th>Example Storage Range</th>
+<th>Status</th>
+</tr>
+<tr><td>V001</td><td>Vaccine A</td><td>100</td><td>2°C to 8°C</td><td>Demo</td></tr>
+<tr><td>V002</td><td>Vaccine B</td><td>150</td><td>2°C to 8°C</td><td>Demo</td></tr>
+<tr><td>V003</td><td>Vaccine C</td><td>80</td><td>2°C to 8°C</td><td>Demo</td></tr>
+<tr><td>V004</td><td>Vaccine D</td><td>120</td><td>2°C to 8°C</td><td>Demo</td></tr>
+</table>
 
-  <h2>Vaccine Storage Overview</h2>
-
-  <div class="cards">
-
-    <div class="card">
-      <h3>Total Vaccine Types</h3>
-      <div class="value">4</div>
-    </div>
-
-    <div class="card">
-      <h3>Storage Units</h3>
-      <div class="value">2</div>
-    </div>
-
-    <div class="card">
-      <h3>Monitoring</h3>
-      <div class="value">Active</div>
-    </div>
-
-  </div>
-
-  <div class="panel">
-    <h2>Vaccine Details</h2>
-
-    <table>
-      <tr>
-        <th>Vaccine</th>
-        <th>Quantity</th>
-        <th>Storage Range</th>
-        <th>Status</th>
-      </tr>
-
-      <tr>
-        <td>Sample Vaccine A</td>
-        <td>100</td>
-        <td>2°C to 8°C</td>
-        <td class="status">Demo</td>
-      </tr>
-
-      <tr>
-        <td>Sample Vaccine B</td>
-        <td>150</td>
-        <td>2°C to 8°C</td>
-        <td class="status">Demo</td>
-      </tr>
-
-      <tr>
-        <td>Sample Vaccine C</td>
-        <td>80</td>
-        <td>2°C to 8°C</td>
-        <td class="status">Demo</td>
-      </tr>
-
-      <tr>
-        <td>Sample Vaccine D</td>
-        <td>120</td>
-        <td>2°C to 8°C</td>
-        <td class="status">Demo</td>
-      </tr>
-
-    </table>
-  </div>
-
-  <div class="panel">
-    <h2>Storage Information</h2>
-    <p>
-      This section displays vaccine storage information
-      and helps monitor the environmental conditions
-      of vaccine storage units.
-    </p>
-    <br>
-    <p>
-      Temperature limits must be configured according
-      to the specific vaccine manufacturer's guidance
-      and applicable healthcare requirements.
-    </p>
-  </div>
-
+<div class="note">
+<strong>Important:</strong> These are example entries only. Actual vaccine storage temperatures and limits vary by product. Always follow the manufacturer's instructions and applicable healthcare guidelines.
 </div>
-
-<footer>
-  ECE Mini Project | Vaccine Storage Monitoring
-</footer>
-
+</main>
 </body>
 </html>
