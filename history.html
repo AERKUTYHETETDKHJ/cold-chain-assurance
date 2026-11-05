@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Temperature History</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f1f6fb;
+  color: #17324d;
+}
+
+header {
+  background: #075985;
+  color: white;
+  padding: 22px;
+}
+
+nav {
+  background: #0c4a6e;
+  padding: 14px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-right: 13px;
+  font-size: 14px;
+}
+
+.container {
+  padding: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.panel {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 20px;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  min-width: 400px;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+th, td {
+  text-align: left;
+  padding: 13px 8px;
+  border-bottom: 1px solid #ddd;
+  font-size: 13px;
+}
+
+th {
+  color: #075985;
+}
+
+footer {
+  background: #0c4a6e;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 30px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h2>Sensor Reading History</h2>
+  <p>Cold Chain Monitoring System</p>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="dashboard.html">Dashboard</a>
+  <a href="vaccines.html">Vaccines</a>
+  <a href="blood.html">Blood</a>
+  <a href="alerts.html">Alerts</a>
+  <a href="history.html">History</a>
+</nav>
+
+<div class="container">
+
+  <h2>Temperature and Humidity History</h2>
+
+  <div class="panel">
+
+    <h3>Previous Sensor Readings</h3>
+
+    <table>
+      <tr>
+        <th>Time</th>
+        <th>Temperature</th>
+        <th>Humidity</th>
+        <th>Storage</th>
+      </tr>
+
+      <tr>
+        <td>10:00 AM</td>
+        <td>5.0°C</td>
+        <td>55%</td>
+        <td>Vaccine A</td>
+      </tr>
+
+      <tr>
+        <td>10:05 AM</td>
+        <td>5.2°C</td>
+        <td>56%</td>
+        <td>Vaccine A</td>
+      </tr>
+
+      <tr>
+        <td>10:10 AM</td>
+        <td>4.9°C</td>
+        <td>54%</td>
+        <td>Vaccine A</td>
+      </tr>
+
+      <tr>
+        <td>10:15 AM</td>
+        <td>5.5°C</td>
+        <td>58%</td>
+        <td>Blood A</td>
+      </tr>
+
+      <tr>
+        <td>10:20 AM</td>
+        <td>5.1°C</td>
+        <td>55%</td>
+        <td>Blood A</td>
+      </tr>
+
+    </table>
+
+  </div>
+
+  <div class="panel">
+    <h3>History Information</h3>
+    <p>
+      This page displays sample historical readings.
+      After database integration, actual sensor records
+      will be displayed here.
+    </p>
+  </div>
+
+</div>
+
+<footer>
+  ECE Mini Project | Sensor Reading History
+</footer>
+
+</body>
+</html>
