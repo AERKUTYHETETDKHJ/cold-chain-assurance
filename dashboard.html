@@ -3,260 +3,71 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cold Chain Dashboard</title>
-
+<title>Monitoring Dashboard</title>
 <style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-}
-
-body {
-  background: #f0f5fa;
-  color: #17324d;
-}
-
-header {
-  background: #075985;
-  color: white;
-  padding: 20px;
-}
-
-header h2 {
-  margin-bottom: 5px;
-}
-
-nav {
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="dashboard.html">Dashboard</a>
-    <a href="vaccines.html">Vaccines</a>
-    <a href="blood.html">Blood Supplies</a>
-    <a href="alerts.html">Alerts</a>
-    <a href="history.html">History</a>
-</nav>
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  margin-right: 16px;
-  font-size: 14px;
-}
-
-.container {
-  padding: 20px;
-  max-width: 1100px;
-  margin: auto;
-}
-
-.container h2 {
-  margin-bottom: 18px;
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
-  gap: 15px;
-}
-
-.card {
-  background: white;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 3px 12px #00000010;
-}
-
-.card h3 {
-  font-size: 14px;
-  color: #64748b;
-  margin-bottom: 12px;
-}
-
-.value {
-  font-size: 27px;
-  font-weight: bold;
-  color: #0369a1;
-}
-
-.status {
-  color: #15803d;
-  font-weight: bold;
-  margin-top: 10px;
-  font-size: 13px;
-}
-
-.warning {
-  color: #dc2626;
-}
-
-.panel {
-  background: white;
-  margin-top: 22px;
-  padding: 20px;
-  border-radius: 12px;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 15px;
-  font-size: 13px;
-}
-
-td, th {
-  padding: 12px 7px;
-  border-bottom: 1px solid #e2e8f0;
-  text-align: left;
-}
-
-th {
-  color: #075985;
-}
-
-.alert {
-  background: #fff1f2;
-  padding: 14px;
-  border-left: 4px solid #e11d48;
-  margin-top: 12px;
-  border-radius: 6px;
-}
-
-button {
-  background: #0284c7;
-  color: white;
-  padding: 11px 16px;
-  border: none;
-  border-radius: 6px;
-  margin-top: 15px;
-}
-
-footer {
-  background: #0c4a6e;
-  color: white;
-  padding: 18px;
-  text-align: center;
-  margin-top: 25px;
-}
+*{box-sizing:border-box}
+body{font-family:Arial,sans-serif;margin:0;background:#f2f7fa;color:#183247}
+header{background:#075985;color:white;text-align:center;padding:25px}
+nav{background:#023e5a;padding:14px;text-align:center}
+nav a{color:white;text-decoration:none;margin:7px;padding:8px;display:inline-block}
+nav a:hover{background:#087eaa;border-radius:5px}
+main{max-width:1000px;margin:25px auto;padding:15px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:15px}
+.card{background:white;padding:20px;border-radius:10px;box-shadow:0 2px 8px #0001}
+.value{font-size:27px;color:#087eaa;font-weight:bold}
+button{background:#087eaa;color:white;border:0;padding:12px 18px;border-radius:6px;cursor:pointer}
+table{width:100%;border-collapse:collapse;background:white;margin-top:15px}
+th,td{padding:12px;border:1px solid #ddd;text-align:center}
+th{background:#075985;color:white}
+.notice{background:#fff3cd;padding:14px;border-radius:8px;margin-top:18px}
 </style>
 </head>
-
 <body>
-
 <header>
-  <h2>Cold Chain Monitoring</h2>
-  <p>Vaccine and Blood Supply Assurance</p>
+<h1>Cold Chain Monitoring</h1>
+<p>Vaccine and Blood Supply Monitoring Dashboard</p>
 </header>
 
 <nav>
-  <a href="index.html">Home</a>
-  <a href="dashboard.html">Dashboard</a>
-  <a href="#alerts">Alerts</a>
-  <a href="#history">History</a>
+<a href="index.html">Home</a>
+<a href="dashboard.html">Dashboard</a>
+<a href="vaccines.html">Vaccines</a>
+<a href="blood.html">Blood Supplies</a>
+<a href="alerts.html">Alerts</a>
+<a href="history.html">History</a>
 </nav>
 
-<div class="container">
-
-  <h2>Monitoring Dashboard</h2>
-  <p>Storage monitoring overview</p>
-
-  <div class="cards">
-
-    <div class="card">
-      <h3>Temperature</h3>
-      <div class="value" id="temp">5.0 °C</div>
-      <div class="status">Sample reading</div>
-    </div>
-
-    <div class="card">
-      <h3>Humidity</h3>
-      <div class="value" id="humidity">55%</div>
-      <div class="status">Sample reading</div>
-    </div>
-
-    <div class="card">
-      <h3>Vaccine Storage</h3>
-      <div class="value">Active</div>
-      <div class="status">Monitoring enabled</div>
-    </div>
-
-    <div class="card">
-      <h3>Blood Storage</h3>
-      <div class="value">Active</div>
-      <div class="status">Monitoring enabled</div>
-    </div>
-
-  </div>
-
-  <div class="panel" id="alerts">
-    <h3>Temperature Alerts</h3>
-
-    <div class="alert">
-      <strong>Demo Alert:</strong>
-      Alerts will appear here when readings cross
-      the configured storage limits.
-    </div>
-
-    <button onclick="checkTemperature()">
-      Test Temperature Alert
-    </button>
-
-    <p id="message"></p>
-  </div>
-
-  <div class="panel" id="history">
-    <h3>Recent Sensor Readings</h3>
-
-    <table>
-      <tr>
-        <th>Time</th>
-        <th>Temperature</th>
-        <th>Humidity</th>
-      </tr>
-
-      <tr>
-        <td>10:00 AM</td>
-        <td>5.0 °C</td>
-        <td>55%</td>
-      </tr>
-
-      <tr>
-        <td>10:05 AM</td>
-        <td>5.2 °C</td>
-        <td>56%</td>
-      </tr>
-
-      <tr>
-        <td>10:10 AM</td>
-        <td>4.9 °C</td>
-        <td>54%</td>
-      </tr>
-    </table>
-  </div>
-
+<main>
+<h2>Monitoring Dashboard</h2>
+<div class="cards">
+<div class="card"><h3>Temperature</h3><p class="value">5.0 °C</p><p>Demo reading</p></div>
+<div class="card"><h3>Humidity</h3><p class="value">55%</p><p>Demo reading</p></div>
+<div class="card"><h3>Vaccine Storage</h3><p class="value">Active</p><p>Demo status</p></div>
+<div class="card"><h3>Blood Storage</h3><p class="value">Active</p><p>Demo status</p></div>
 </div>
 
-<footer>
-  ECE Mini Project | Cold Chain Assurance
-</footer>
+<h2>Recent Readings</h2>
+<table>
+<tr><th>Time</th><th>Temperature</th><th>Humidity</th></tr>
+<tr><td>10:00 AM</td><td>5.0 °C</td><td>55%</td></tr>
+<tr><td>10:05 AM</td><td>5.2 °C</td><td>56%</td></tr>
+<tr><td>10:10 AM</td><td>4.9 °C</td><td>54%</td></tr>
+</table>
+
+<div class="notice">
+<strong>Demonstration only:</strong> These are sample readings, not live sensor data. Storage limits must be set for each product or blood component according to applicable guidance.
+</div>
+
+<h2>Test Demonstration Alert</h2>
+<button onclick="testAlert()">Test Alert</button>
+<p id="message"></p>
+</main>
 
 <script>
-function checkTemperature() {
-  const temperature = 12;
-  const message = document.getElementById("message");
-
-  if (temperature > 8) {
-    message.innerHTML =
-      "WARNING: Temperature is outside the demo limit!";
-    message.style.color = "red";
-  } else {
-    message.innerHTML = "Temperature is within the demo limit.";
-    message.style.color = "green";
-  }
+function testAlert(){
+document.getElementById("message").innerHTML =
+"Demo alert: A sample temperature reading is outside the example limit.";
 }
 </script>
-
 </body>
 </html>
