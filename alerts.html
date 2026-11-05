@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cold Chain Alerts</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f1f6fb;
+  color: #17324d;
+}
+
+header {
+  background: #075985;
+  color: white;
+  padding: 22px;
+}
+
+nav {
+  background: #0c4a6e;
+  padding: 14px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-right: 13px;
+  font-size: 14px;
+}
+
+.container {
+  max-width: 1000px;
+  padding: 20px;
+  margin: auto;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.card h3 {
+  color: #64748b;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.value {
+  font-size: 27px;
+  font-weight: bold;
+}
+
+.red {
+  color: #dc2626;
+}
+
+.green {
+  color: #15803d;
+}
+
+.panel {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 22px;
+}
+
+.alert {
+  padding: 16px;
+  border-radius: 8px;
+  margin-top: 13px;
+  line-height: 1.6;
+}
+
+.danger {
+  background: #fee2e2;
+  border-left: 5px solid #dc2626;
+}
+
+.success {
+  background: #dcfce7;
+  border-left: 5px solid #16a34a;
+}
+
+button {
+  background: #0284c7;
+  color: white;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 6px;
+  margin-top: 15px;
+}
+
+footer {
+  background: #0c4a6e;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 30px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h2>Cold Chain Alert System</h2>
+  <p>Temperature Warning and Monitoring</p>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="dashboard.html">Dashboard</a>
+  <a href="vaccines.html">Vaccines</a>
+  <a href="blood.html">Blood</a>
+  <a href="alerts.html">Alerts</a>
+</nav>
+
+<div class="container">
+
+  <h2>Alert Overview</h2>
+  <p>Sample alert information for demonstration.</p>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>Total Alerts</h3>
+      <div class="value">3</div>
+    </div>
+
+    <div class="card">
+      <h3>Critical Alerts</h3>
+      <div class="value red">1</div>
+    </div>
+
+    <div class="card">
+      <h3>Normal Status</h3>
+      <div class="value green">Active</div>
+    </div>
+
+  </div>
+
+  <div class="panel">
+
+    <h2>Recent Alerts</h2>
+
+    <div class="alert danger">
+      <strong>HIGH TEMPERATURE WARNING</strong>
+      <p>Sample reading: 12°C</p>
+      <p>Storage unit: Vaccine Unit A</p>
+      <p>Status: Demonstration alert</p>
+    </div>
+
+    <div class="alert danger">
+      <strong>STORAGE CONDITION WARNING</strong>
+      <p>Sample reading: 10°C</p>
+      <p>Storage unit: Blood Unit B</p>
+      <p>Status: Demonstration alert</p>
+    </div>
+
+    <div class="alert success">
+      <strong>NORMAL CONDITION</strong>
+      <p>Sample reading: 5°C</p>
+      <p>Storage unit: Vaccine Unit C</p>
+      <p>Status: Sample only</p>
+    </div>
+
+  </div>
+
+  <div class="panel">
+    <h2>Test Alert System</h2>
+
+    <p>
+      Click the button to test a sample temperature
+      warning. This is a demonstration, not a real
+      sensor alert.
+    </p>
+
+    <button onclick="generateAlert()">
+      Generate Test Alert
+    </button>
+
+    <div id="result"></div>
+
+  </div>
+
+</div>
+
+<footer>
+  ECE Mini Project | Cold Chain Assurance
+</footer>
+
+<script>
+function generateAlert() {
+  document.getElementById("result").innerHTML =
+    '<div class="alert danger">' +
+    '<strong>TEST WARNING!</strong><br>' +
+    'A sample temperature reading is outside ' +
+    'the configured demonstration limit.' +
+    '</div>';
+}
+</script>
+
+</body>
+</html>
