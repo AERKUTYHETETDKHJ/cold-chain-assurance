@@ -57,10 +57,11 @@ app.get("/api/readings", async (req, res) => {
     .limit(100);
 
   if (error) {
-    return res.status(500).json({
-      error: "Unable to fetch readings"
-    });
-  }
+  console.error("Supabase storage_units error:", error);
+  return res.status(500).json({
+    error: "Unable to fetch storage units"
+  });
+}
 
   res.json(data);
 });
